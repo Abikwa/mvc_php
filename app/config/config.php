@@ -1,7 +1,7 @@
 <?php
 define('DS',DIRECTORY_SEPARATOR);
 define('APP_ROOT',dirname(dirname(__FILE__)));
-define('URL_ROOT','http://localhost/bibliotheque');
+define('URL_ROOT','http://localhost/mvc_php_crud');
 define('CONTROLLERS',APP_ROOT . DS . 'controller' . DS);
 define('LIBRARIES',APP_ROOT . DS . 'libraries' . DS);
 define('MODELS',APP_ROOT . DS . 'models'. DS);
