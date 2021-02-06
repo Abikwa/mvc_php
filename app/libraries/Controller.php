@@ -1,5 +1,5 @@
 <?php
-namespace bibliotheque\app\libraries\Controller;
+namespace mvc_php_crud\app\libraries\Controller;
 
 class Controller {
     private $pagefinale="default";
