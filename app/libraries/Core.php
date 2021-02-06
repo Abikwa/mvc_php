@@ -1,5 +1,5 @@
 <?php
-namespace bibliotheque\app\libraries\Core;
+namespace mvc_php_crud\app\libraries\Core;
 class Core{
     private $controller='Home';
     private $method='index';
