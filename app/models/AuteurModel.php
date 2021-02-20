@@ -18,7 +18,7 @@ class AuteurModel
 
    public function getauteurbyId($auteur)
    {
-      $this->connexion_db->query('SELECT * FROM auteur WHERE id = :id');
+      $this->connexion_db->query('SELECT * FROM auteur WHERE idauteur = :id');
       $this->connexion_db->bind(":id", $auteur);
       return $this->connexion_db->single();
    }
@@ -43,5 +43,12 @@ class AuteurModel
        $this->connexion_db->execute();
 
        return TRUE;
+   }
+   public function delete($auteur)
+   {
+      $this->connexion_db->query('DELETE FROM auteur WHERE idauteur = :id');
+      $this->connexion_db->bind(":id", $auteur);
+      $this->connexion_db->execute();
+      return TRUE;
    }
 }
