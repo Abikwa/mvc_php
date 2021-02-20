@@ -1,0 +1,18 @@
+<div class="card mb-4 mt-5">
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Editer les données de l'auteur
+    </div>
+    
+    <div class="card-body">
+    <div class="table-responsive">
+
+    <div class="col-md-12 text-right">
+    <a href="<?= URL_ROOT?>/auteur/" class="btn btn-primary"> auteur</a>
+    </div>
+    <form action="<?= URL_ROOT ?>/auteur/edit/<?= $data['id'] ?>" method="post" class="container row">
+        <?php include_once VIEWS."auteurs/form.phtml" ?>
+     </form>
+    </div>
+</div>
+</div>
