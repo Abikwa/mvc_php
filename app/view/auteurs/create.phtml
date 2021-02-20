@@ -10,18 +10,19 @@
     <div class="col-md-12 text-right">
     <a href="<?= URL_ROOT?>/auteur/" class="btn btn-primary"> auteur</a>
     </div>
-    <form action="<?= URL_ROOT ?>/auteur/store" method="post" class="container row">
+    <?= (isset($data['ERROR'])) ? '<div class="alert alert-danger col-md-8">'.$data['ERROR'].'</div>' : '' ?>
+    <form action="<?= URL_ROOT ?>/auteur/create" method="post" class="container row">
         <div class="col-md-3">
             <label for="">Nom autheur</label>
-            <input type="text" name="nomauteur" id="" class="form-control" >
+            <input type="text" name="nomauteur" id="" class="form-control" value="<?= (isset($data['nomauteur'])) ? $data['nomauteur'] : '' ?>" >
         </div>
         <div class="col-md-3">
             <label for="">adresse</label>
-            <input type="text" name="adresse" id="" class="form-control" >
+            <input type="text" name="adresse" id="" class="form-control" value="<?= (isset($data['adresse'])) ? $data['adresse'] : '' ?>" >
         </div>
         <div class="col-md-3">
             <label for="">telephone</label>
-            <input type="text" name="telephone" id="" class="form-control" >
+            <input type="text" name="telephone" id="" class="form-control" value="<?= (isset($data['telephone'])) ? $data['telephone'] : '' ?>" >
         </div>
         <div class="col-md-3">
             <label for=""></label><br>
