@@ -1,0 +1,17 @@
+<?= (isset($data['ERROR']) && !empty($data['ERROR'])) ? '<div class="alert alert-danger col-md-8">'.$data['ERROR'].'</div><div class="col-md-4"></div>' : '' ?>
+<div class="col-md-3">
+    <label for="">Nom autheur</label>
+    <input type="text" name="nomauteur" id="" class="form-control" value="<?= (isset($data['nomauteur'])) ? $data['nomauteur'] : '' ?>" >
+</div>
+<div class="col-md-3">
+    <label for="">adresse</label>
+    <input type="text" name="adresse" id="" class="form-control" value="<?= (isset($data['adresse'])) ? $data['adresse'] : '' ?>" >
+</div>
+<div class="col-md-3">
+    <label for="">telephone</label>
+    <input type="text" name="telephone" id="" class="form-control" value="<?= (isset($data['telephone'])) ? $data['telephone'] : '' ?>" >
+</div>
+<div class="col-md-3">
+    <label for=""></label><br>
+    <button type="submit" class="btn btn-info"> <i class="fa fa-check"></i> Valider </button>
+</div>
