@@ -1,10 +1,12 @@
 <div class="card mb-4 mt-5">
-                            <div class="card-header">
-                                <i class="fas fa-table mr-1"></i>
-                                Autheur
-                            </div>
-                            
-                            <div class="card-body">
+    <div class="card-header">
+        <i class="fas fa-table mr-1"></i>
+        Autheur
+    </div>
+    <?= (isset($data['ERROR']) && !empty($data['ERROR'])) ? '<div class="alert alert-success col-md-8">'.$data['ERROR'].'</div><div class="col-md-4"></div>' : '' ?>
+
+    
+    <div class="card-body">
     <div class="table-responsive">
 
     <div class="col-md-12 text-right">
@@ -16,14 +18,21 @@
                     <th>Nom Auteur</th>
                     <th>Adresse</th>
                     <th>Telephone</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($data as $auteur) {  ?>
+                <?php foreach($data['auteurs'] as $auteur) {  ?>
                     <tr>
                         <td><?= $auteur->nomauteur ?></td>
                         <td><?= $auteur->adresse ?></td>
                         <td><?= $auteur->telephone ?></td>
+                        <td>
+                            <form action="<?=URL_ROOT ?>/auteur/<?= $auteur->idauteur ?>" method="post">
+                                <a href="<?=URL_ROOT ?>/auteur/edit/<?= $auteur->idauteur ?>" class="btn btn-info  rounded-circle"><i class="fas fa-pen"></i> </a>
+                                <button type="submit" class="btn btn-danger  rounded-circle"><i class="fa fa-trash"></i> </button>
+                            </form>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>
