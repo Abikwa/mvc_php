@@ -7,9 +7,20 @@ class Auteur extends Controller{
   {
     $this->auteurModel = $this->model('AuteurModel');
   }
-    public function index()
+    public function index($id=null)
     {
-        $data = $this->auteurModel->getauteurs();
+        $data['auteurs'] = $this->auteurModel->getauteurs();
+        if($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+            $auteur = $this->auteurModel->getauteurById($id);
+            if($auteur)
+            {
+                $this->auteurModel->delete($id);
+                $data['ERROR']= "auteur bien supprimé";
+            }
+            else
+                $data['ERROR']= "cet auteur n'existe pas";
+        }
         $this->template('auteurs/index', $data);
     }
 
