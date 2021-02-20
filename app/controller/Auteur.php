@@ -15,6 +15,7 @@ class Auteur extends Controller{
 
     public function create()
     {
+        $data = [];
         if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
            $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
@@ -43,7 +44,7 @@ class Auteur extends Controller{
             $data['ERROR'] = "nom auteur obligatoire";
         }
 
-        $this->template('auteurs/create');
+        $this->template('auteurs/create', $data);
     }
 
 }
