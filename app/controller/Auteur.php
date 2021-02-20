@@ -36,6 +36,7 @@ class Auteur extends Controller{
                     if(!empty($data['telephone']))
                     {
                         $this->auteurModel->creer($data);
+                        redirect_url_helper('auteur');
                     }
                     else
                     $data['ERROR'] = "telephone obligatoire";
